@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crown-adjustment-analyzer"
+version = "1.3.0"
+description = "A Python tool for quantifying chairside adjustments in dental crown prosthetics"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Mohamed Sherif Omar", email = "msomar@iu.edu"}
+]
+keywords = [
+    "dentistry",
+    "prosthodontics",
+    "CAD/CAM",
+    "3D mesh analysis",
+    "dental crowns"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Medical Science Apps."
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+    "trimesh>=3.15.0",
+    "pyvista>=0.38.0",
+    "pyvistaqt>=0.9.0",
+    "PyQt5>=5.15.0",
+    "pandas>=1.3.0"
+]
+
+[project.urls]
+Repository = "https://github.com/mohamedsherifo/crown-adjustment-analyzer"
+
+[project.scripts]
+crown-analyzer = "crown_analyzer:main"
+
+[tool.setuptools]
+py-modules = ["crown_analyzer", "batch_analyze"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
